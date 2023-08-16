@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +9,71 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 </head>
+
 <body>
-  <header>
+  <header class="heading">
+    <div class="container">
+      <div class="row">
+        <div class="nav-bar">
+          <div class="column-three-fourths">
+            <h1>HARRY POTTER CHARACTER CARDS</h1>
+          </div>
+          <div class="column-one-fourth">
+            <button class="red-favorite-page"><i class="fa-solid fa-heart"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="information-container hidden">
+      <div class="information-row">
+        <div class="column-one-third">
+          <button class="x-button"><i class="fa-solid fa-circle-xmark"></i></button>
+        </div>
+        <div class="column-one-third hp-card-title">
+          <h1>HARRY POTTER CHARACTER CARDS</h1>
+        </div>
+        <div class="column-one-third red-favorite-page">
+          <button class="red-favorite-page"><i class="fa-solid fa-heart"></i></button>
+        </div>
+      </div>
+    </div>
   </header>
+
   <main>
+    <div class="character-container">
+      <div data-view="character-view" class="character-view">
+        <a class="view-info">View Information</a>
+      </div>
+    </div>
+    <div class="favorite-containter hidden">
+      <div data-view="favorite-view" class="fave-view">
+        <div class="row">
+          <div class="column-one-third">
+            <button class="x-button"><i class="fa-solid fa-circle-xmark"></i></button>
+          </div>
+          <div class="column-one-third favorites-page">
+            <h1>FAVORITES</h1>
+          </div>
+          <div class="column-one-third red-favorite-page">
+            <button class="red-favorite-page"><i class="fa-solid fa-heart"></i></button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column-full">
+            <p class="no-favorites">There are no favorites saved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="information-container hidden">
+      <div data-view="information-view" class="information-view"></div>
+
+    </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
 </body>
+
 </html>
