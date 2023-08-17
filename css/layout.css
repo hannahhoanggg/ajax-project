@@ -25,3 +25,8 @@
     max-width: 900px;
   }
 }
+
+.column-full,
+.column-half {
+  padding: 0 0.75rem;
+}

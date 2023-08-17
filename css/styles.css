@@ -1,0 +1,184 @@
+* {
+  font-family: "Just Me Again Down Here", cursive;
+}
+
+body {
+  background-image: url("https://images.ctfassets.net/usf1vwtuqyxm/71J6YPxNauhFABbjHpGluJ/631bd6980b0a430d5b476ef331abb2b5/release_1_hogwarts.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.nav-bar {
+  display: flex;
+  margin: 0 auto;
+  color: #f89b9b;
+  font-size: 20px;
+}
+
+.column-one-fourth {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.column-one-fourth-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.red-favorite-page {
+  color: #f44336;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 0.4rem;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.x-button {
+  color: #784880;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 0.4rem;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.favorite-containter {
+  display: flex;
+  justify-content: center;
+}
+
+.no-favorites {
+  font-size: 30px;
+  background-color: #eea0ca;
+}
+
+.delete-entry {
+  color: #f42254;
+  font-size: 20px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.visibility-hidden {
+  visibility: hidden;
+}
+
+.button-cancel {
+  background-color: #98f9e7;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.button-confirm {
+  background-color: #e977fc;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.button-row {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.55);
+  font-size: 23px;
+  position: fixed;
+  inset: 0;
+}
+
+.modal-content {
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid;
+  padding: 30px;
+}
+
+.information-container {
+  background-color: #eea0ca;
+  width: 95%;
+  margin-left: 20px;
+}
+
+.column-full,
+.info {
+  display: flex;
+  justify-content: center;
+}
+
+.hp-name {
+  font-size: 40px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.like-button {
+  color: #f44336;
+  border: 1px solid white;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 15px;
+  margin-left: 250px;
+  cursor: pointer;
+}
+
+p {
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+.img-placeholder {
+  margin: 0 auto;
+}
+
+img,
+.img {
+  width: 50%;
+  margin-top: 10px;
+}
+
+.character-container {
+  background-color: #eea0ca;
+  width: 20%;
+  margin: auto;
+  border-radius: 5px;
+  border: 2px solid rgb(185, 185, 185);
+  box-shadow: 0 3px 4px rgb(179, 179, 179);
+}
+
+.view-info {
+  font-size: 25px;
+  color: #f42254;
+}
+
+.hp-card:hover {
+  cursor: pointer;
+  transform: rotateZ(2deg);
+}
+
+h2 {
+  font-size: 15px;
+  color: #00afba;
+  text-align: center;
+}
+
+.information-details {
+  color: white;
+  font-size: 10px;
+}

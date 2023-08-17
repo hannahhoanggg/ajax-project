@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Jost:wght@100&family=Just+Me+Again+Down+Here&family=Lora:ital,wght@1,500&family=Montserrat:wght@100&family=Nunito:wght@300&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
@@ -17,7 +20,10 @@
     <div class="container">
       <div class="row">
         <div class="nav-bar">
-          <div class="column-three-fourths">
+          <div class="column-one-fourth-left">
+            <button class="x-button"><i class="fa-solid fa-circle-xmark"></i></button>
+          </div>
+          <div class="column-half">
             <h1>HARRY POTTER CHARACTER CARDS</h1>
           </div>
           <div class="column-one-fourth">
@@ -27,15 +33,49 @@
       </div>
     </div>
     <div class="information-container hidden">
-      <div class="information-row">
-        <div class="column-one-third">
-          <button class="x-button"><i class="fa-solid fa-circle-xmark"></i></button>
-        </div>
-        <div class="column-one-third hp-card-title">
-          <h1>HARRY POTTER CHARACTER CARDS</h1>
-        </div>
-        <div class="column-one-third red-favorite-page">
-          <button class="red-favorite-page"><i class="fa-solid fa-heart"></i></button>
+      <div data-view="information-view" class="information-row">
+        <div class="row">
+          <div class="column-full">
+            <h3 class="hp-name">
+              <span class="info-header">NAME</span>
+              <button class="like-button"><i class="fa-regular fa-heart"></i></button>
+            </h3>
+          </div>
+          <div class="row img-placeholder">
+            <div class="column-full">
+              <img src="images/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" alt="placeholder"/>
+            </div>
+          </div>
+          <div class="column-half information-details">
+            <p class="born">
+              <span class="info-header">BORN</span>
+              <span class="born-info"></span>
+            </p>
+            <p class="died">
+              <span class="info-header">DIED</span>
+              <span class="died-info"></span>
+            </p>
+            <p class="blood">
+              <span class="info-header">BLOOD STATUS</span>
+              <span class="blood-status-info"></span>
+            </p>
+            <p class="house">
+              <span class="info-header">HOUSE</span>
+              <span class="house-info"></span>
+            </p>
+            <p class="patronus">
+              <span class="info-header">PATRONUS</span>
+              <span class="patronus-info"></span>
+            </p>
+            <p class="wand">
+              <span class="info-header">WAND</span>
+              <span class="wand-info"></span>
+            </p>
+            <p class="hp-wiki">
+              <span class="info-header">HARRY POTTER WIKI</span>
+              <span class="hp-info"></span>
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -44,33 +84,37 @@
   <main>
     <div class="character-container">
       <div data-view="character-view" class="character-view">
-        <div class="row">
-          <!-- <img src="images/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" /> -->
+        <div class="row img-placeholder">
+          <div class="column-full">
+            <img src="images/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" alt="placeholder" class="img"/>
+          </div>
         </div>
-        <!-- <a class="view-info">View Information</a> -->
+        <div class="row info">
+          <a class="view-info">View Information</a>
+        </div>
       </div>
     </div>
     <div class="favorite-containter hidden">
       <div data-view="favorite-view" class="fave-view">
         <div class="row">
-          <div class="column-one-third">
+          <div class="column-one-fourth-left">
             <button class="x-button"><i class="fa-solid fa-circle-xmark"></i></button>
           </div>
-          <div class="column-one-third favorites-page">
+          <div class="column-one-third nav-bar">
             <h1>FAVORITES</h1>
           </div>
-          <div class="column-one-third red-favorite-page">
+          <div class="column-one-fourth">
             <button class="red-favorite-page"><i class="fa-solid fa-heart"></i></button>
           </div>
         </div>
         <div class="row">
           <div class="column-full">
-            <p class="no-favorites">There are no favorites saved.</p>
+            <p class="no-favorites hidden">There are no favorites saved.</p>
           </div>
         </div>
         <div class="column-full">
           <div class="row button-row">
-            <a class="delete-entry visibility-hidden">Delete Entry</a>
+            <a class="delete-entry visibility-hidden">Delete</a>
           </div>
         </div>
         <div class="modal-container hidden">
@@ -79,45 +123,6 @@
             <div class="row button-row">
               <button class="button-cancel">CANCEL</button>
               <button class="button-confirm">CONFIRM</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="information-container hidden">
-        <div data-view="information-view" class="information-view">
-          <div class="row">
-            <img src="images/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" />
-          </div>
-          <div class="row">
-            <div class="column-half">
-              <p class="born">
-                <span class="info-header">BORN</span>
-                <span class="born-info"></span>
-              </p>
-              <p class="died">
-                <span class="info-header">DIED</span>
-                <span class="died-info"></span>
-              </p>
-              <p class="blood">
-                <span class="info-header">BLOOD STATUS</span>
-                <span class="blood-status-info"></span>
-              </p>
-              <p class="house">
-                <span class="info-header">HOUSE</span>
-                <span class="house-info"></span>
-              </p>
-              <p class="patronus">
-                <span class="info-header">PATRONUS</span>
-                <span class="patronus-info"></span>
-              </p>
-              <p class="wand">
-                <span class="info-header">WAND</span>
-                <span class="wand-info"></span>
-              </p>
-              <p class="hp-wiki">
-                <span class="info-header">HARRY POTTER WIKI</span>
-                <span class="hp-info"></span>
-              </p>
             </div>
           </div>
         </div>
