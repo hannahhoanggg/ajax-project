@@ -133,7 +133,6 @@ body {
   background-color: white;
   border-radius: 5px;
   font-size: 15px;
-  margin-left: 250px;
   cursor: pointer;
 }
 
@@ -155,7 +154,7 @@ img,
 
 .character-container {
   background-color: #eea0ca;
-  width: 20%;
+  width: 25%;
   margin: auto;
   border-radius: 5px;
   border: 2px solid rgb(185, 185, 185);
@@ -163,7 +162,7 @@ img,
 }
 
 .view-info {
-  font-size: 20px;
+  font-size: 18px;
   color: #f42254;
 }
 
@@ -173,7 +172,7 @@ img,
 }
 
 h2 {
-  font-size: 15px;
+  font-size: 20px;
   color: #00afba;
   text-align: center;
 }
