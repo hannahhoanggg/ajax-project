@@ -121,12 +121,6 @@ body {
   justify-content: center;
 }
 
-.hp-name {
-  font-size: 40px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
 .like-button {
   color: #f44336;
   border: 1px solid white;
@@ -149,16 +143,22 @@ p {
 img,
 .img {
   width: 50%;
-  margin-top: 10px;
 }
 
-.character-container {
+.character-container,
+.hp-card {
   background-color: #eea0ca;
-  width: 25%;
+  width: 20%;
   margin: auto;
   border-radius: 5px;
   border: 2px solid rgb(185, 185, 185);
   box-shadow: 0 3px 4px rgb(179, 179, 179);
+}
+
+.new-button-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .view-info {
