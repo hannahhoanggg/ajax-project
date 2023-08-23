@@ -145,8 +145,7 @@ img,
   width: 50%;
 }
 
-.character-container,
-.hp-card {
+.character-container {
   background-color: #eea0ca;
   width: 20%;
   margin: auto;
@@ -166,7 +165,7 @@ img,
   color: #f42254;
 }
 
-.hp-card:hover {
+.character-container:hover {
   cursor: pointer;
   transform: rotateZ(2deg);
 }
