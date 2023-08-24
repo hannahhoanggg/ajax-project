@@ -24,6 +24,10 @@
   .container {
     max-width: 900px;
   }
+
+  .column-half {
+    width: 50%;
+  }
 }
 
 .column-full,
