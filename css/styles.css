@@ -9,23 +9,15 @@ body {
   background-size: cover;
 }
 
+.row-bar {
+  display: block;
+}
+
 .nav-bar {
   display: flex;
-  margin: 0 auto;
+  justify-content: space-between;
   color: #f89b9b;
   font-size: 20px;
-}
-
-.column-one-fourth {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-.column-one-fourth-left {
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
 .red-favorite-page {
