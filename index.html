@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +9,36 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Jost:wght@100&family=Just+Me+Again+Down+Here&family=Lora:ital,wght@1,500&family=Montserrat:wght@100&family=Nunito:wght@300&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
-  <header>
+  <header class="heading">
+    <div class="container">
+      <div class="row-bar">
+        <div class="nav-bar">
+          <div class="column-one-fourth-left">
+            <button class="x-button"><i class="fa-solid fa-circle-xmark"></i></button>
+          </div>
+          <div class="column-full">
+            <h1>&#10024; HARRY POTTER CHARACTER CARDS &#10024;</h1>
+          </div>
+          <div class="column-one-fourth">
+            <button class="red-favorite-page"><i class="fa-solid fa-heart"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
   </header>
+
   <main>
+    <div class="character-container"></div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
 </body>
+
 </html>

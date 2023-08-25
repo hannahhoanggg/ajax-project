@@ -1,0 +1,31 @@
+.hidden {
+  display: none !important;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column-full,
+.column-half,
+.column-one-third,
+.column-three-fourths {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .column-half {
+    width: 50%;
+  }
+}
+
+.column-full,
+.column-half {
+  padding: 0 0.75rem;
+}
