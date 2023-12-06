@@ -56,21 +56,21 @@ function renderHPCharacters(name, charImage) {
 }
 
 const characters = [
-  '8c43c796-2e42-4a81-8d37-447a02e4235a', // harry
-  '36228ea4-fb5d-42d1-863a-770ac02c5464', // hermione
-  '8e5223c6-7e60-4a22-808b-fa39762f1686', // ron
-  '07a2d24a-602c-4986-9941-86cc80f35709', // dumbledore
-  '58317657-14f0-4f91-bf76-06fad9cbc651', // mcgonagall
-  '6635d2e5-07ac-42ba-adf3-18a834fba5b4', // neville
-  '97dbd832-f038-4d87-83c6-fa7d03131a4a', // hagrid
-  'dd4e3454-67d9-45c3-8f43-0f3eebbd3234', // malfoy
-  '7e3b7067-9319-49b1-9a07-5efa5e3e23cd', // ginny
-  'd83d5c2a-1a24-414f-8d32-c268c3cd8a10', // luna
-  'ff032a78-3b9d-40d5-b5d7-26203c5a6c52', // molly
-  '2081dc402b5940c59fdb036263c42fbb', // snape
-  '319c2a73-3cda-4dd3-9562-2c40009d34c5', // fred
-  '23af9747-5659-4055-9774-54f08bcaec8c', // george
-  'cf70445a-6b44-4a51-98de-f14d19d0389b' // cedric
+  '42d8662b-24a2-434b-8394-945ff0daa194', // harry
+  'ef6195c9-fc46-4a13-95eb-cf90848c8a9f', // hermione
+  '1cfd4f04-cd14-45c1-96d7-a08287e7b671', // ron
+  '80d199a6-21c0-43eb-9026-51bd77b2c9a5', // dumbledore
+  'e4d82fb3-e07b-439c-ac65-3dfbef5a8985', // mcgonagall
+  'fbf54908-4fc8-4eab-b67b-541118612096', // neville
+  '94eb4256-18b2-4b10-90b3-8e400c860eb0', // hagrid
+  '70d041f6-10af-4f6b-be5f-644025838c7d', // malfoy
+  '51c25a9c-5cce-4404-b686-70a01f534dd4', // ginny
+  '6281cd42-37b5-4602-9bb2-ce3efe1c04e7', // luna
+  '46471d0a-fcbb-4ecb-a4d6-376881588f88', // molly
+  '324801b0-398c-4c98-afde-15a93ace991f', // snape
+  '125f941e-14c6-42ca-83d6-7ea1ccdf32cb', // fred
+  '18e18593-b6ae-41a3-ad2e-489ddd5ae096', // george
+  '54f419af-9476-420c-ab21-ea96a5ab44c2' // cedric
 ];
 
 function getCharacterData(charID) {
