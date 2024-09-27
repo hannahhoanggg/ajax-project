@@ -71,7 +71,6 @@ const characters = [
  '2c28e7aa-a759-491f-8045-e41491789fc6', // fred
  '54b6c905-1d89-4f9c-a066-14411aef2737', // george
  '01e36a8f-9445-4826-aae2-2fbe0f2b7864' // cedric
-
 ];
 
 function getCharacterData(charID) {
