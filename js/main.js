@@ -62,11 +62,11 @@ const characters = [
  '79c75147-27f3-4076-90d8-827980bb49c3', // albus dumbledore
  'd59b3a0b-0b61-40cb-9011-e8bee7e6dd46', // minverva mcgonagall
  '820f73a0-6037-422e-8eb1-a9c22ab9f861', // neville longbottom
- '2b81a93-668d-4777-ac58-8865a6db2247', // rubeus hagrid
+ '02b81a93-668d-4777-ac58-8865a6db2247', // rubeus hagrid
  '437b996e-ff52-448f-af7c-65d3aae0eb52', // draco malfoy
  '19eb1ac7-ef2d-421d-bc7c-0fd2ff46d09e', // ginny (ginerva) weasley
  '7911a096-9f34-45b8-a8c7-e9009923416d', // luna lovegood
- '401b86564-5bba-4b80-9cc3-7adc394d2e47', // molly weasley
+ '01b86564-5bba-4b80-9cc3-7adc394d2e47', // molly weasley
  '5ab59e36-980a-4bee-b1c9-f0a3bbc94339', // severus snape
  '2c28e7aa-a759-491f-8045-e41491789fc6', // fred weasley
  '54b6c905-1d89-4f9c-a066-14411aef2737', // george weasley
