@@ -56,21 +56,21 @@ function renderHPCharacters(name, charImage) {
 }
 
 const characters = [
- '15df8339-79d5-4061-840a-080ab736699e', // harry potter
- '65eba7cc-f613-4db2-a62d-a3895111a1c8', // hermione granger
- 'fa79e43f-0c4c-45af-b7fc-c49a3adbbfb9', // ron weasley
- '79c75147-27f3-4076-90d8-827980bb49c3', // albus dumbledore
- 'd59b3a0b-0b61-40cb-9011-e8bee7e6dd46', // minverva mcgonagall
- '820f73a0-6037-422e-8eb1-a9c22ab9f861', // neville longbottom
- '2b81a93-668d-4777-ac58-8865a6db2247', // rubeus hagrid
- '437b996e-ff52-448f-af7c-65d3aae0eb52', // draco malfoy
- '19eb1ac7-ef2d-421d-bc7c-0fd2ff46d09e', // ginny (ginerva) weasley
- '7911a096-9f34-45b8-a8c7-e9009923416d', // luna lovegood
- '401b86564-5bba-4b80-9cc3-7adc394d2e47', // molly weasley
- '5ab59e36-980a-4bee-b1c9-f0a3bbc94339', // severus snape
- '2c28e7aa-a759-491f-8045-e41491789fc6', // fred weasley
- '54b6c905-1d89-4f9c-a066-14411aef2737', // george weasley
- '01e36a8f-9445-4826-aae2-2fbe0f2b7864' // cedric diggory
+ 'bcae9def-6584-4300-ac63-ff007974bf3c', // harry potter
+ '9a992090-02b8-4c89-9e6a-bdaa32404c69', // hermione granger
+ 'fd67ddb5d-192b-4d75-8f18-c55a1b5ce442', // ron weasley
+ 'a57de83d-2a44-40d4-8060-75895fa756f5', // albus dumbledore
+ '2ddd3642-ee7d-41e1-aa18-ae6c6855d07f', // minverva mcgonagall
+ 'de9a44ac-400d-4c2b-9da6-f52240ba3e54', // neville longbottom
+ '3afcc5c7-8c96-4921-97cb-a4ce5ff67acb', // rubeus hagrid
+ '8765ea64-39c7-4275-8aeb-7b457f0d2a52', // draco malfoy
+ '49ce06a5-f08b-4475-8e79-72a2b0733c5d', // ginny (ginerva) weasley
+ '91ec67d7-bf9a-4fa4-b5d6-aa99b8aba036', // luna lovegood
+ '74b0522c-8c66-4866-884d-b04455884a84', // molly weasley
+ '45c907dd-c1cf-40ba-b287-e90a80f3183e', // severus snape
+ 'deb89774-4a79-4efe-8342-4037c93b8dba', // fred weasley
+ '36ba1b33-4dd2-457d-b44d-27e4728b2faf', // george weasley
+ '6f250fa6-0984-4096-85f4-02b73474dcc7' // cedric diggory
 ];
 
 function getCharacterData(charID) {
