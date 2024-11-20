@@ -58,7 +58,7 @@ function renderHPCharacters(name, charImage) {
 const characters = [
  'bcae9def-6584-4300-ac63-ff007974bf3c', // harry potter
  '9a992090-02b8-4c89-9e6a-bdaa32404c69', // hermione granger
- 'fd67ddb5d-192b-4d75-8f18-c55a1b5ce442', // ron weasley
+ 'd67ddb5d-192b-4d75-8f18-c55a1b5ce442', // ron weasley
  'a57de83d-2a44-40d4-8060-75895fa756f5', // albus dumbledore
  '2ddd3642-ee7d-41e1-aa18-ae6c6855d07f', // minverva mcgonagall
  'de9a44ac-400d-4c2b-9da6-f52240ba3e54', // neville longbottom
