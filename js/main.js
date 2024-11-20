@@ -1,5 +1,39 @@
 const $charContainer = document.querySelector('.character-container');
 
+const $detailsContainer = document.createElement('div');
+$detailsContainer.className = 'detail-container hidden';
+document.body.appendChild($detailsContainer);
+
+function renderCharacterDetails(charData, charImage) {
+  $detailsContainer.innerHTML = '';
+
+  const $detailsModal = document.createElement('div');
+  $detailsModal.className = 'details-modal';
+
+  const $name = document.createElement('h2');
+  $name.textContent = charData.attributes.name;
+
+  const $newButtonRow = document.createElement('div');
+  $newButtonRow.className = 'new-button-row';
+
+  const $likeButton = document.createElement('i');
+  $likeButton.className = 'fa-regular fa-heart like-button ';
+
+  const $row2 = document.createElement('div');
+  $row2.className = 'row';
+
+  const $imgColumn = document.createElement('div');
+  $imgColumn.className = 'column-third';
+
+  const $image = document.createElement('img');
+  $image.className = 'img';
+  $image.setAttribute('src', charImage);
+
+  const $attributesColumn = document.createElement('div');
+  $attributesColumn.className = 'column-third';
+
+}
+
 function renderHPCharacters(name, charImage) {
 
   const $charView = document.createElement('div');
