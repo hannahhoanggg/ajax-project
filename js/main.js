@@ -30,8 +30,22 @@ function renderCharacterDetails(charData, charImage) {
   $image.setAttribute('src', charImage);
 
   const $attributesColumn = document.createElement('div');
-  $attributesColumn.className = 'column-third';
+  $attributesColumn.className = 'column-half';
 
+  const $born = document.createElement('p');
+  $born.textContent = `Born: ${charData.attributes.born || 'Unknown'}`;
+  
+  const $bloodStatus = document.createElement('p');
+  $bloodStatus.textContent = `Blood Status: ${charData.attributes.bloodstatus || 'Unknown'}`;
+
+  const $house = document.createElement('p');
+  $house.textContent = `House: ${charData.attributes.house || 'Unknown'}`;
+
+  const $patronus = document.createElement('p');
+  $patronus.textContent = `Patronus: ${charData.attributes.patronus || 'Unknown'}`;
+
+  const $wand = document.createElement('p');
+  $wand.textContent = `Wand: ${charData.attributes.wand || 'Unknown'}`;
 }
 
 function renderHPCharacters(name, charImage) {
