@@ -46,6 +46,22 @@ function renderCharacterDetails(charData, charImage) {
 
   const $wand = document.createElement('p');
   $wand.textContent = `Wand: ${charData.attributes.wand || 'Unknown'}`;
+
+  const $closeButton = document.createElement('button');
+  $closeButton.textContent = 'Close';
+  $closeButton.addEventListener('click', function() {
+    $detailsContainer.classList.add('hidden');
+  });
+
+  $detailsModal.appendChild($born);
+  $detailsModal.appendChild($bloodStatus);
+  $detailsModal.appendChild($house);
+  $detailsModal.appendChild($patronus);
+  $detailsModal.appendChild($wand);
+  $detailsModal.appendChild($closeButton);
+  $detailsContainer.appendChild($detailsModal);
+
+  $detailsContainer.classList.remove('hidden');
 }
 
 function renderHPCharacters(name, charImage) {
