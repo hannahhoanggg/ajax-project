@@ -4,7 +4,7 @@ const $detailsContainer = document.createElement('div');
 $detailsContainer.className = 'detail-container hidden';
 document.body.appendChild($detailsContainer);
 
-function renderCharacterDetails(charData, charImage) {
+function renderCharacterDetails(charData, charImage, name) {
   $detailsContainer.innerHTML = '';
 
   const $detailsModal = document.createElement('div');
@@ -18,6 +18,9 @@ function renderCharacterDetails(charData, charImage) {
 
   const $likeButton = document.createElement('i');
   $likeButton.className = 'fa-regular fa-heart like-button ';
+
+  const $xButton = document.createElement('i');
+  $xButton.className = 'fa-solid fa-circle-xmark x-button ';
 
   const $row2 = document.createElement('div');
   $row2.className = 'row';
@@ -47,11 +50,13 @@ function renderCharacterDetails(charData, charImage) {
   const $wand = document.createElement('p');
   $wand.textContent = `Wand: ${charData.attributes.wand || 'Unknown'}`;
 
-  const $closeButton = document.createElement('button');
+  const $closeButton = document.createElement('x-button');
   $closeButton.textContent = 'Close';
   $closeButton.addEventListener('click', function() {
     $detailsContainer.classList.add('hidden');
   });
+
+  $name.textContent = name.toUpperCase();
 
   $detailsModal.appendChild($born);
   $detailsModal.appendChild($bloodStatus);
@@ -64,7 +69,24 @@ function renderCharacterDetails(charData, charImage) {
   $detailsContainer.classList.remove('hidden');
 }
 
-function renderHPCharacters(name, charImage) {
+function attachViewInfoListener($viewInfo, charID) {
+  $viewInfo.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    const request = new XMLHttpRequest();
+    request.open ('GET', `https://api.potterdb.com/v1/characters/${charID}`);
+    request.responseType = 'json';
+    request.send();
+
+    request.addEventListener('load', function() {
+      if (request.response && request.response.data) {
+        renderCharacterDetails(request.response.data); 
+      }
+    });
+  });
+}
+
+function renderHPCharacters(name, charImage, charID) {
 
   const $charView = document.createElement('div');
   $charView.className = 'character-view column-fifth';
