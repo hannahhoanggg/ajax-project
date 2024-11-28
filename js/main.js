@@ -1,17 +1,17 @@
 const $charContainer = document.querySelector('.character-container');
 
 const $detailsContainer = document.createElement('div');
-$detailsContainer.className = 'detail-container hidden';
+$detailsContainer.className = 'details-container hidden';
 document.body.appendChild($detailsContainer);
 
-function renderCharacterDetails(charData, charImage, name) {
+function renderCharacterDetails(charData, charImage) {
   $detailsContainer.innerHTML = '';
 
   const $detailsModal = document.createElement('div');
   $detailsModal.className = 'details-modal';
 
   const $name = document.createElement('h2');
-  $name.textContent = charData.attributes.name;
+  $name.textContent = charData.attributes.name.toUpperCase();
 
   const $newButtonRow = document.createElement('div');
   $newButtonRow.className = 'new-button-row';
@@ -21,6 +21,12 @@ function renderCharacterDetails(charData, charImage, name) {
 
   const $xButton = document.createElement('i');
   $xButton.className = 'fa-solid fa-circle-xmark x-button ';
+  $xButton.addEventListener('click', function () {
+    $detailsContainer.classList.add('hidden');
+  });
+
+  $newButtonRow.appendChild($xButton);
+  $newButtonRow.appendChild($likeButton);
 
   const $row2 = document.createElement('div');
   $row2.className = 'row';
@@ -50,20 +56,18 @@ function renderCharacterDetails(charData, charImage, name) {
   const $wand = document.createElement('p');
   $wand.textContent = `Wand: ${charData.attributes.wand || 'Unknown'}`;
 
-  const $closeButton = document.createElement('x-button');
-  $closeButton.textContent = 'Close';
-  $closeButton.addEventListener('click', function() {
-    $detailsContainer.classList.add('hidden');
-  });
+  $attributesColumn.appendChild($born);
+  $attributesColumn.appendChild($bloodStatus);
+  $attributesColumn.appendChild($house);
+  $attributesColumn.appendChild($patronus);
+  $attributesColumn.appendChild($wand);
 
-  $name.textContent = name.toUpperCase();
-
-  $detailsModal.appendChild($born);
-  $detailsModal.appendChild($bloodStatus);
-  $detailsModal.appendChild($house);
-  $detailsModal.appendChild($patronus);
-  $detailsModal.appendChild($wand);
-  $detailsModal.appendChild($closeButton);
+  $detailsModal.appendChild($name);
+  $detailsModal.appendChild($newButtonRow);
+  $imgColumn.appendChild($image);
+  $row2.appendChild($imgColumn);
+  $row2.appendChild($attributesColumn);
+  $detailsModal.appendChild($row2);
   $detailsContainer.appendChild($detailsModal);
 
   $detailsContainer.classList.remove('hidden');
@@ -124,6 +128,8 @@ function renderHPCharacters(name, charImage, charID) {
   $viewInfo.className = 'view-info';
   $viewInfo.textContent = 'View Information';
 
+  attachViewInfoListener($viewInfo, charID);
+
   $hpName.textContent = name.toUpperCase();
 
   $charView.appendChild($characterRow);
@@ -167,7 +173,7 @@ function getCharacterData(charID) {
 
   request.addEventListener('load', function () {
     const charData = request.response;
-    $charContainer.appendChild(renderHPCharacters(charData.data.attributes.name, charData.data.attributes.image));
+    $charContainer.appendChild(renderHPCharacters(charData.data.attributes.name, charData.data.attributes.image, charID));
   });
 }
 

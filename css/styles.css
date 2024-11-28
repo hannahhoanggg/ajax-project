@@ -102,3 +102,23 @@ h2 {
   color: black;
   text-align: center;
 }
+
+.details-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.details-modal {
+  background-color: #eea0ca;
+  padding: 20x;
+  border-radius: 8px;
+  text-align: center;
+}
