@@ -4,20 +4,14 @@ const $detailsContainer = document.createElement('div');
 $detailsContainer.className = 'details-container hidden';
 document.body.appendChild($detailsContainer);
 
-function renderCharacterDetails(charData, charImage) {
+function renderCharacterDetails(charData) {
   $detailsContainer.innerHTML = '';
 
   const $detailsModal = document.createElement('div');
   $detailsModal.className = 'details-modal';
 
-  const $name = document.createElement('h2');
-  $name.textContent = charData.attributes.name.toUpperCase();
-
-  const $newButtonRow = document.createElement('div');
-  $newButtonRow.className = 'new-button-row';
-
-  const $likeButton = document.createElement('i');
-  $likeButton.className = 'fa-regular fa-heart like-button ';
+  const $headerRow = document.createElement('div');
+  $headerRow.className = 'header-row';
 
   const $xButton = document.createElement('i');
   $xButton.className = 'fa-solid fa-circle-xmark x-button ';
@@ -25,45 +19,58 @@ function renderCharacterDetails(charData, charImage) {
     $detailsContainer.classList.add('hidden');
   });
 
-  $newButtonRow.appendChild($xButton);
-  $newButtonRow.appendChild($likeButton);
+  const $name = document.createElement('h2');
+  $name.textContent = charData.attributes.name.toUpperCase();
+
+  const $likeButton = document.createElement('i');
+  $likeButton.className = 'fa-regular fa-heart like-button ';
+
+  $headerRow.appendChild($xButton);
+  $headerRow.appendChild($name);
+  $headerRow.appendChild($likeButton);
+
+  $detailsModal.appendChild($headerRow);
 
   const $row2 = document.createElement('div');
   $row2.className = 'row';
 
   const $imgColumn = document.createElement('div');
-  $imgColumn.className = 'column-third';
+  $imgColumn.className = 'column-half';
 
   const $image = document.createElement('img');
-  $image.className = 'img';
-  $image.setAttribute('src', charImage);
+  $image.setAttribute('src', charData.attributes.image);
 
   const $attributesColumn = document.createElement('div');
   $attributesColumn.className = 'column-half';
 
   const $born = document.createElement('p');
-  $born.textContent = `Born: ${charData.attributes.born || 'Unknown'}`;
+  $born.textContent = `BORN: ${charData.attributes.born.toUpperCase() || 'Unknown'}`;
   
   const $bloodStatus = document.createElement('p');
-  $bloodStatus.textContent = `Blood Status: ${charData.attributes.bloodstatus || 'Unknown'}`;
+  $bloodStatus.textContent = `BLOOD STATUS: ${charData.attributes.blood_status.toUpperCase() || 'Unknown'}`;
 
   const $house = document.createElement('p');
-  $house.textContent = `House: ${charData.attributes.house || 'Unknown'}`;
+  $house.textContent = `HOUSE: ${charData.attributes.house.toUpperCase() || 'Unknown'}`;
 
   const $patronus = document.createElement('p');
-  $patronus.textContent = `Patronus: ${charData.attributes.patronus || 'Unknown'}`;
+  const patronus = (charData.attributes.patronus || 'Unknown').toUpperCase();
+  $patronus.textContent = `PATRONUS: ${patronus}`;
+
 
   const $wand = document.createElement('p');
-  $wand.textContent = `Wand: ${charData.attributes.wand || 'Unknown'}`;
+  $wand.textContent = `WAND: ${charData.attributes.wands[0].toUpperCase() || 'Unknown'}`;
+
+  const $boggart = document.createElement('p');
+  const boggart  = (charData.attributes.boggart|| 'Unknown').toUpperCase();
+  $boggart.textContent = `BOGGART: ${boggart}`;
 
   $attributesColumn.appendChild($born);
   $attributesColumn.appendChild($bloodStatus);
   $attributesColumn.appendChild($house);
   $attributesColumn.appendChild($patronus);
   $attributesColumn.appendChild($wand);
+  $attributesColumn.appendChild($boggart);
 
-  $detailsModal.appendChild($name);
-  $detailsModal.appendChild($newButtonRow);
   $imgColumn.appendChild($image);
   $row2.appendChild($imgColumn);
   $row2.appendChild($attributesColumn);
