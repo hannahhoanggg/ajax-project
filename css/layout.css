@@ -14,8 +14,7 @@
 
 .column-full,
 .column-half,
-.column-one-third,
-.column-three-fourths {
+.column-one-third {
   width: 100%;
 }
 
