@@ -4,6 +4,7 @@ const $detailsContainer = document.createElement('div');
 $detailsContainer.className = 'details-container hidden';
 document.body.appendChild($detailsContainer);
 
+
 function renderCharacterDetails(charData) {
   $detailsContainer.innerHTML = '';
 
@@ -24,6 +25,9 @@ function renderCharacterDetails(charData) {
 
   const $likeButton = document.createElement('i');
   $likeButton.className = 'fa-regular fa-heart like-button ';
+  $likeButton.addEventListener('click', function() {
+    addToFavorites(charData.id, charData.attributes.name, charData.attributes.image);
+  });
 
   $headerRow.appendChild($xButton);
   $headerRow.appendChild($name);
@@ -117,6 +121,9 @@ function renderHPCharacters(name, charImage, charID) {
 
   const $likeButton = document.createElement('i');
   $likeButton.className = 'fa-regular fa-heart like-button ';
+  $likeButton.addEventListener('click', function() {
+    addToFavorites(charID, name, charImage);
+  });
 
   const $row2 = document.createElement('div');
   $row2.className = 'img-row';
@@ -190,3 +197,14 @@ function getAllCharacters() {
   }
 }
 getAllCharacters();
+
+const favorites = [];
+
+function addToFavorites(charID, name, charImage) {
+  const isAlreadyFavorite = favorites.some(fave => fave.id === charID);
+
+  if (!isAlreadyFavorite) {
+    favorites.push({ id: charID, name, image: charImage });
+    console.log(`${name} has been added to your favorites!`);
+  }
+}
