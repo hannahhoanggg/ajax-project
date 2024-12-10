@@ -62,7 +62,8 @@ body {
   width: 50%;
 }
 
-.character-container {
+.character-container, 
+.favorites-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
