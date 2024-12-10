@@ -4,7 +4,6 @@ const $detailsContainer = document.createElement('div');
 $detailsContainer.className = 'details-container hidden';
 document.body.appendChild($detailsContainer);
 
-
 function renderCharacterDetails(charData) {
   $detailsContainer.innerHTML = '';
 
@@ -206,5 +205,39 @@ function addToFavorites(charID, name, charImage) {
   if (!isAlreadyFavorite) {
     favorites.push({ id: charID, name, image: charImage });
     console.log(`${name} has been added to your favorites!`);
+  } else {
+    console.log(`${name} is already in favorites.`);
   }
 }
+
+function favoritesPage() {
+  const $favoritesPage = document.createElement('div');
+  $favoritesPage.className = 'favorites-page';
+  document.body.appendChild($favoritesPage);
+};
+
+function renderFavorites() {
+  const $favoritesContainer = document.querySelector('.favorites-container');
+  $favoritesContainer.innerHTML = '';
+
+  favorites.forEach(favorite => {
+    const $favoriteCard = document.createElement('div');
+    $favoriteCard.className = 'favorite-card';
+
+    const $name = document.createElement('h2');
+    $name.textContent = favorite.name;
+
+    const $image = document.createElement('img');
+    $image.setAttribute('src', favorite.image);
+    $image.className = 'img';
+
+    $favoriteCard.appendChild($name);
+    $favoriteCard.appendChild($image);
+    $favoritesContainer.appendChild($favoriteCard);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  favoritesPage();
+  renderFavorites();
+});
