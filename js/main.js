@@ -211,9 +211,26 @@ function addToFavorites(charID, name, charImage) {
 }
 
 function favoritesPage() {
-  const $favoritesPage = document.createElement('div');
-  $favoritesPage.className = 'favorites-page';
+  // document.querySelector('.characters-page').style.display = 'none'; 
+  
+  let $favoritesPage = document.querySelector('.favorites-page');
+  if (!$favoritesPage) {
+    $favoritesPage = document.createElement('section');
+    $favoritesPage.className = 'favorites-page';
+    $favoritesPage.innerHTML = `
+      <h1>Favorites</h1>
+      <div class="favorites-container"></div>
+      <button class="back-button">Back to Characters</button>`;
   document.body.appendChild($favoritesPage);
+
+  const $backButton = $favoritesPage.querySelector('.back-button');
+  $backButton.addEventListener('click', function() {
+    $favoritesPage.style.display = 'none';
+    // document.querySelector('.characters-page').style.display = 'block';
+  });
+}
+  // $favoritesPage.style.display = 'block';
+  renderFavorites();
 };
 
 function renderFavorites() {
@@ -238,6 +255,13 @@ function renderFavorites() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  favoritesPage();
+  const $redFavoritesButton = document.querySelector('.red-favorite-page');
+  if ($redFavoritesButton) {
+    $redFavoritesButton.addEventListener('click', function() {
+      favoritesPage();
+    });
+  } else {
+    console.error("There are currently no characters in the favorites page.")
+  }
   renderFavorites();
 });
