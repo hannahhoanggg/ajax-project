@@ -211,57 +211,61 @@ function addToFavorites(charID, name, charImage) {
 }
 
 function favoritesPage() {
-  // document.querySelector('.characters-page').style.display = 'none'; 
-  
   let $favoritesPage = document.querySelector('.favorites-page');
+
   if (!$favoritesPage) {
     $favoritesPage = document.createElement('section');
-    $favoritesPage.className = 'favorites-page';
+    $favoritesPage.className = 'favorites-page hidden';
     $favoritesPage.innerHTML = `
       <h1>Favorites</h1>
       <div class="favorites-container"></div>
+      <p class="message hidden">There are currently no items in your favorites.</p>
       <button class="back-button">Back to Characters</button>`;
   document.body.appendChild($favoritesPage);
 
   const $backButton = $favoritesPage.querySelector('.back-button');
   $backButton.addEventListener('click', function() {
-    $favoritesPage.style.display = 'none';
-    // document.querySelector('.characters-page').style.display = 'block';
+    $favoritesPage.classList.add('hidden');
+    document.querySelector('.characters-page').classList.remove('hidden');
   });
 }
-  // $favoritesPage.style.display = 'block';
+    // document.querySelector('.characters-page').classList.add('hidden');
+    // $favoritesPage.classList.remove('hidden');
+
   renderFavorites();
 };
 
 function renderFavorites() {
   const $favoritesContainer = document.querySelector('.favorites-container');
+  const $message = document.querySelector('.message');
   $favoritesContainer.innerHTML = '';
 
-  favorites.forEach(favorite => {
-    const $favoriteCard = document.createElement('div');
-    $favoriteCard.className = 'favorite-card';
-
-    const $name = document.createElement('h2');
-    $name.textContent = favorite.name;
-
-    const $image = document.createElement('img');
-    $image.setAttribute('src', favorite.image);
-    $image.className = 'img';
-
-    $favoriteCard.appendChild($name);
-    $favoriteCard.appendChild($image);
-    $favoritesContainer.appendChild($favoriteCard);
-  });
+  if (favorites.length === 0) {
+    // $message.classList.remove('hidden');
+  } else {
+    // $message.classList.add('hidden');
+    favorites.forEach(favorite => {
+      const $favoriteCard = document.createElement('div');
+      $favoriteCard.className = 'favorite-card';
+  
+      const $name = document.createElement('h2');
+      $name.textContent = favorite.name;
+  
+      const $image = document.createElement('img');
+      $image.setAttribute('src', favorite.image);
+      $image.className = 'img';
+  
+      $favoriteCard.appendChild($name);
+      $favoriteCard.appendChild($image);
+      $favoritesContainer.appendChild($favoriteCard);
+    });
+  }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () =>  {
   const $redFavoritesButton = document.querySelector('.red-favorite-page');
   if ($redFavoritesButton) {
-    $redFavoritesButton.addEventListener('click', function() {
-      favoritesPage();
-    });
-  } else {
-    console.error("There are currently no characters in the favorites page.")
-  }
+    $redFavoritesButton.addEventListener('click', favoritesPage());
+  } 
   renderFavorites();
 });
