@@ -128,3 +128,23 @@ h2 {
   width: 50%;
   font-size: large;
 }
+
+.favorites-page {
+  text-align: center;
+}
+
+.back-button {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.favorite-card {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #eea0ca;
+}

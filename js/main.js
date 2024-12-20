@@ -225,14 +225,9 @@ function favoritesPage() {
 
   const $backButton = $favoritesPage.querySelector('.back-button');
   $backButton.addEventListener('click', function() {
-    $favoritesPage.classList.add('hidden');
-    document.querySelector('.characters-page').classList.remove('hidden');
   });
 }
-    // document.querySelector('.characters-page').classList.add('hidden');
-    // $favoritesPage.classList.remove('hidden');
-
-  renderFavorites();
+  renderFavorites()
 };
 
 function renderFavorites() {
@@ -241,9 +236,9 @@ function renderFavorites() {
   $favoritesContainer.innerHTML = '';
 
   if (favorites.length === 0) {
-    // $message.classList.remove('hidden');
+    $message.classList.remove('hidden');
   } else {
-    // $message.classList.add('hidden');
+    $message.classList.add('hidden');
     favorites.forEach(favorite => {
       const $favoriteCard = document.createElement('div');
       $favoriteCard.className = 'favorite-card';
