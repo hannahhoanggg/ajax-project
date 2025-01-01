@@ -197,8 +197,10 @@ function getAllCharacters() {
 }
 getAllCharacters();
 
-const favorites = [];
+// Array to store favorite characters
+const favorites = []; 
 
+// Function to add a character to Favorites
 function addToFavorites(charID, name, charImage) {
   const isAlreadyFavorite = favorites.some(fave => fave.id === charID);
 
@@ -210,7 +212,13 @@ function addToFavorites(charID, name, charImage) {
   }
 }
 
+// Function to display the Favorites page
 function favoritesPage() {
+  // Hide the main content rendered by renderHPCharacters
+  const $mainContent = document.querySelector('.main-content');
+  if ($mainContent) $mainContent.classList.add('hidden');
+  
+  // Show or create the Favorites page
   let $favoritesPage = document.querySelector('.favorites-page');
 
   if (!$favoritesPage) {
@@ -223,22 +231,27 @@ function favoritesPage() {
       <button class="back-button">Back to Characters</button>`;
   document.body.appendChild($favoritesPage);
 
+  // Add functionality to the back button
   const $backButton = $favoritesPage.querySelector('.back-button');
-  $backButton.addEventListener('click', function() {
+  $backButton.addEventListener('click', () => {
+    $favoritesPage.classList.add('hidden');
+    if ($mainContent) $mainContent.classList.remove('hidden');
   });
 }
-  renderFavorites()
+  renderFavorites();
+  $favoritesPage.classList.remove('hidden');
 };
 
+// Function to render the Favorites list 
 function renderFavorites() {
   const $favoritesContainer = document.querySelector('.favorites-container');
   const $message = document.querySelector('.message');
   $favoritesContainer.innerHTML = '';
 
   if (favorites.length === 0) {
-    $message.classList.remove('hidden');
+    $message.style.display = 'block';
   } else {
-    $message.classList.add('hidden');
+    $message.style.display = 'none';
     favorites.forEach(favorite => {
       const $favoriteCard = document.createElement('div');
       $favoriteCard.className = 'favorite-card';
@@ -257,10 +270,24 @@ function renderFavorites() {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () =>  {
+// Function to initialize the Main page
+function mainPage() {
   const $redFavoritesButton = document.querySelector('.red-favorite-page');
   if ($redFavoritesButton) {
-    $redFavoritesButton.addEventListener('click', favoritesPage());
+    $redFavoritesButton.addEventListener('click', favoritesPage);
   } 
-  renderFavorites();
+  // Dynamically render the main content
+  renderHPCharacters();
+}
+
+// Initialize the application
+document.addEventListener('DOMContentLoaded', () => { 
+  // Create a container for the main content if it doesn't exist 
+let $mainContent = document.querySelector('.main-content');
+  if ($mainContent) {
+    $mainContent = document.createElement('div');
+    $mainContent.className = 'main-content';
+    document.body.appendChild($mainContent);
+  } 
+  mainPage();
 });
