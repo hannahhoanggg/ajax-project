@@ -219,15 +219,15 @@ function favoritesPage() {
   if ($mainContent) $mainContent.classList.add('hidden');
   
   // Show or create the Favorites page
-  let $favoritesPage = document.querySelector('.favorites-page');
+  // let $favoritesPage = document.querySelector('.favorites-page');
 
-  if (!$favoritesPage) {
-    $favoritesPage = document.createElement('section');
-    $favoritesPage.className = 'favorites-page hidden';
+  // if (!$favoritesPage) {
+    const $favoritesPage = document.createElement('section');
+    $favoritesPage.className = 'favorites-page';
     $favoritesPage.innerHTML = `
       <h1>Favorites</h1>
       <div class="favorites-container"></div>
-      <p class="message hidden">There are currently no items in your favorites.</p>
+      <p class="message">There are currently no items in your favorites.</p>
       <button class="back-button">Back to Characters</button>`;
   document.body.appendChild($favoritesPage);
 
@@ -237,7 +237,6 @@ function favoritesPage() {
     $favoritesPage.classList.add('hidden');
     if ($mainContent) $mainContent.classList.remove('hidden');
   });
-}
   renderFavorites();
   $favoritesPage.classList.remove('hidden');
 };
@@ -249,9 +248,12 @@ function renderFavorites() {
   $favoritesContainer.innerHTML = '';
 
   if (favorites.length === 0) {
-    $message.style.display = 'block';
+    // Show the "no items" message
+    $message.classList.remove('hidden');
   } else {
-    $message.style.display = 'none';
+    // Hide the "no items" message
+    $message.classList.add('hidden');
+
     favorites.forEach(favorite => {
       const $favoriteCard = document.createElement('div');
       $favoriteCard.className = 'favorite-card';
@@ -284,10 +286,14 @@ function mainPage() {
 document.addEventListener('DOMContentLoaded', () => { 
   // Create a container for the main content if it doesn't exist 
 let $mainContent = document.querySelector('.main-content');
-  if ($mainContent) {
+  if (!$mainContent) {
     $mainContent = document.createElement('div');
     $mainContent.className = 'main-content';
     document.body.appendChild($mainContent);
-  } 
+  }
   mainPage();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderFavorites(); // Run after DOM content is fully loaded
 });
