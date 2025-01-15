@@ -215,8 +215,8 @@ function addToFavorites(charID, name, charImage) {
 // Function to display the Favorites page
 function favoritesPage() {
   // Hide the main content rendered by renderHPCharacters
-  const $mainContent = document.querySelector('.main-content');
-  if ($mainContent) $mainContent.classList.add('hidden');
+  // const $mainContent = document.querySelector('.main-content');
+  // if ($mainContent) $mainContent.classList.add('hidden');
   
   // Show or create the Favorites page
   // let $favoritesPage = document.querySelector('.favorites-page');
@@ -272,27 +272,27 @@ function renderFavorites() {
   }
 }
 
-// Function to initialize the Main page
-function mainPage() {
-  const $redFavoritesButton = document.querySelector('.red-favorite-page');
-  if ($redFavoritesButton) {
-    $redFavoritesButton.addEventListener('click', favoritesPage);
-  } 
-  // Dynamically render the main content
-  renderHPCharacters();
-}
+// // Function to initialize the Main page
+// function mainPage() {
+//   const $redFavoritesButton = document.querySelector('.red-favorite-page');
+//   if ($redFavoritesButton) {
+//     $redFavoritesButton.addEventListener('click', favoritesPage);
+//   } 
+//   // Dynamically render the main content
+//   renderHPCharacters();
+// }
 
 // Initialize the application
-document.addEventListener('DOMContentLoaded', () => { 
-  // Create a container for the main content if it doesn't exist 
-let $mainContent = document.querySelector('.main-content');
-  if (!$mainContent) {
-    $mainContent = document.createElement('div');
-    $mainContent.className = 'main-content';
-    document.body.appendChild($mainContent);
-  }
-  mainPage();
-});
+// document.addEventListener('DOMContentLoaded', () => { 
+//   // Create a container for the main content if it doesn't exist 
+// let $mainContent = document.querySelector('.main-content');
+//   if (!$mainContent) {
+//     $mainContent = document.createElement('div');
+//     $mainContent.className = 'main-content';
+//     document.body.appendChild($mainContent);
+//   }
+//   mainPage();
+// });
 
 document.addEventListener('DOMContentLoaded', () => {
   renderFavorites(); // Run after DOM content is fully loaded
