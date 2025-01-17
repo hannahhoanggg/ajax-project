@@ -294,6 +294,17 @@ function renderFavorites() {
 //   mainPage();
 // });
 
+document.querySelector('.red-favorite-page').addEventListener('click', () => {
+  document.querySelector('.main-content').classList.add('hidden');
+  document.querySelector('.favorites-page').classList.remove('hidden');
+  renderFavorites();
+});
+
+document.querySelector('.back-button').addEventListener('click', () => {
+  document.querySelector('.favorites-page').classList.add('hidden');
+  document.querySelector('.main-content').classList.remove('hidden');
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   renderFavorites(); // Run after DOM content is fully loaded
 });
