@@ -68,7 +68,6 @@ body {
   flex-wrap: wrap;
   justify-content: space-evenly;
   border-radius: 5px;
-  box-shadow: 0 3px 4px rgb(179, 179, 179);
 }
 
 .column-fifth {
