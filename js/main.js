@@ -212,35 +212,6 @@ function addToFavorites(charID, name, charImage) {
   }
 }
 
-// Function to display the Favorites page
-function favoritesPage() {
-  // Hide the main content rendered by renderHPCharacters
-  // const $mainContent = document.querySelector('.main-content');
-  // if ($mainContent) $mainContent.classList.add('hidden');
-  
-  // Show or create the Favorites page
-  // let $favoritesPage = document.querySelector('.favorites-page');
-
-  // if (!$favoritesPage) {
-    const $favoritesPage = document.createElement('section');
-    $favoritesPage.className = 'favorites-page';
-    $favoritesPage.innerHTML = `
-      <h1>Favorites</h1>
-      <div class="favorites-container"></div>
-      <p class="message">There are currently no items in your favorites.</p>
-      <button class="back-button">Back to Characters</button>`;
-  document.body.appendChild($favoritesPage);
-
-  // Add functionality to the back button
-  const $backButton = $favoritesPage.querySelector('.back-button');
-  $backButton.addEventListener('click', () => {
-    $favoritesPage.classList.add('hidden');
-    if ($mainContent) $mainContent.classList.remove('hidden');
-  });
-  renderFavorites();
-  $favoritesPage.classList.remove('hidden');
-};
-
 // Function to render the Favorites list 
 function renderFavorites() {
   const $favoritesContainer = document.querySelector('.favorites-container');
