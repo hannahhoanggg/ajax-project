@@ -129,17 +129,33 @@ h2 {
 }
 
 .back-button {
-  margin-top: 20px;
-  padding: 10px 15px;
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
   background-color: black;
   color: white;
+  border: none;
   border-radius: 5px;
+  font-size: 16px; 
   cursor: pointer;
 }
 
 .favorite-card {
   display: inline-block;
-  margin: 10px;
-  padding: 10px;
-  border: 1px solid #eea0ca;
+  margin: 5px;
+  padding: 5px;
+  border: 1px;
+  border-radius: 10px;
+  background-color: #eea0ca;
+  text-align: center;
+}
+
+.message {
+  display: block;
+  margin: 20px auto;
+  background-color: rgba(234, 228, 228, 0.6);
+  max-width: 500px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }

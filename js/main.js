@@ -212,7 +212,7 @@ function addToFavorites(charID, name, charImage) {
   }
 }
 
-// Function to render the Favorites list 
+// Function to render the Favorites page 
 function renderFavorites() {
   const $favoritesContainer = document.querySelector('.favorites-container');
   const $message = document.querySelector('.message');
@@ -243,28 +243,7 @@ function renderFavorites() {
   }
 }
 
-// // Function to initialize the Main page
-// function mainPage() {
-//   const $redFavoritesButton = document.querySelector('.red-favorite-page');
-//   if ($redFavoritesButton) {
-//     $redFavoritesButton.addEventListener('click', favoritesPage);
-//   } 
-//   // Dynamically render the main content
-//   renderHPCharacters();
-// }
-
-// Initialize the application
-// document.addEventListener('DOMContentLoaded', () => { 
-//   // Create a container for the main content if it doesn't exist 
-// let $mainContent = document.querySelector('.main-content');
-//   if (!$mainContent) {
-//     $mainContent = document.createElement('div');
-//     $mainContent.className = 'main-content';
-//     document.body.appendChild($mainContent);
-//   }
-//   mainPage();
-// });
-
+// Event listeners for navigation
 document.querySelector('.red-favorite-page').addEventListener('click', () => {
   document.querySelector('.main-content').classList.add('hidden');
   document.querySelector('.favorites-page').classList.remove('hidden');
