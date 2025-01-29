@@ -198,7 +198,8 @@ function getAllCharacters() {
 getAllCharacters();
 
 // Array to store favorite characters
-const favorites = []; 
+const favorites = JSON.parse(localStorage.getItem('favorites')) || []; // Load from localStorage
+let deleteTargetId = null; // Store the character ID to delete
 
 // Function to add a character to Favorites
 function addToFavorites(charID, name, charImage) {
@@ -206,10 +207,37 @@ function addToFavorites(charID, name, charImage) {
 
   if (!isAlreadyFavorite) {
     favorites.push({ id: charID, name, image: charImage });
+    localStorage.setItem('favorites', JSON.stringify(favorites)); // Save to localStorage
     console.log(`${name} has been added to your favorites!`);
+    renderFavorites();
   } else {
     console.log(`${name} is already in favorites.`);
   }
+}
+
+// Function to open the modal
+function openDeleteModal(charID) {
+  deleteTargetId = charID; // Store ID of item to be deleted
+  document.querySelector('.delete-modal').classList.remove('hidden');
+}
+
+// Function to close the modal
+function closeDeleteModal() {
+  deleteTargetId = null;
+  document.querySelector('.delete-modal').classList.add('hidden');
+}
+
+// Function to remove a favorite
+function removeFromFavorites() {
+  if (deleteTargetId !== null) {
+    const index = favorites.findIndex(fave => fave.id === deleteTargetId);
+    if (index !== -1) {
+      favorites.splice(index, 1);
+      localStorage.setItem('favorites', JSON.stringify(favorites)); // Save updated favorites
+      renderFavorites(); // Re-render favorites
+    }
+  }
+  closeDeleteModal(); // Close modal after deleting
 }
 
 // Function to render the Favorites list 
@@ -235,13 +263,27 @@ function renderFavorites() {
       const $image = document.createElement('img');
       $image.setAttribute('src', favorite.image);
       $image.className = 'img';
+
+      const $deleteLink = document.createElement('a');
+      $deleteLink.textContent = 'Delete';
+      $deleteLink.href = '#';
+      $deleteLink.className = 'delete-link';
+      $deleteLink.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevent default link behavior
+        openDeleteModal(favorite.id);
+      });
   
       $favoriteCard.appendChild($name);
       $favoriteCard.appendChild($image);
+      $favoriteCard.appendChild($deleteLink);
       $favoritesContainer.appendChild($favoriteCard);
     });
   }
 }
+
+// Event listeners for modal buttons
+document.querySelector('.cancel-delete').addEventListener('click', closeDeleteModal);
+document.querySelector('.confirm-delete').addEventListener('click', removeFromFavorites);
 
 // Event listeners for navigation
 document.querySelector('.red-favorite-page').addEventListener('click', () => {
