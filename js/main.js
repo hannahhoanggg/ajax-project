@@ -215,32 +215,6 @@ function addToFavorites(charID, name, charImage) {
   }
 }
 
-// Function to open the modal
-function openDeleteModal(charID) {
-  deleteTargetId = charID; // Store ID of item to be deleted
-  document.querySelector('.delete-modal').classList.remove('hidden');
-}
-
-// Function to close the modal
-function closeDeleteModal() {
-  deleteTargetId = null;
-  document.querySelector('.delete-modal').classList.add('hidden');
-}
-
-// Function to remove a favorite
-function removeFromFavorites() {
-  if (deleteTargetId !== null) {
-    const index = favorites.findIndex(fave => fave.id === deleteTargetId);
-    if (index !== -1) {
-      favorites.splice(index, 1);
-      localStorage.setItem('favorites', JSON.stringify(favorites)); // Save updated favorites
-      renderFavorites(); // Re-render favorites
-    }
-  }
-  closeDeleteModal(); // Close modal after deleting
-}
-
-// Function to render the Favorites page 
 function renderFavorites() {
   const $favoritesContainer = document.querySelector('.favorites-container');
   const $message = document.querySelector('.message');
