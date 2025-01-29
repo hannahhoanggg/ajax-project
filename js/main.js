@@ -212,7 +212,7 @@ function addToFavorites(charID, name, charImage) {
   }
 }
 
-// Function to render the Favorites page 
+// Function to render the Favorites list 
 function renderFavorites() {
   const $favoritesContainer = document.querySelector('.favorites-container');
   const $message = document.querySelector('.message');
