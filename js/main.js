@@ -218,13 +218,13 @@ function addToFavorites(charID, name, charImage) {
 // Function to open the modal
 function openDeleteModal(charID) {
   deleteTargetId = charID; // Store ID of item to be deleted
-  document.querySelector('.delete-modal').classList.remove('hidden');
+  document.querySelector('.delete-modal').classList.remove('hidden'); // Show modal
 }
 
 // Function to close the modal
 function closeDeleteModal() {
   deleteTargetId = null;
-  document.querySelector('.delete-modal').classList.add('hidden');
+  document.querySelector('.delete-modal').classList.add('hidden'); // Hide modal
 }
 
 // Function to remove a favorite
